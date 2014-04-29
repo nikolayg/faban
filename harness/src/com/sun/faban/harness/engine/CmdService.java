@@ -659,9 +659,14 @@ final public class CmdService { 	// The final keyword prevents clones
         List<String> cmd = new ArrayList<String>();
 
         List<String> agentParams = new ArrayList<String>();
+        //FIXME BUGFIX! - In CloudStone, we need these set differently
+        //agentParams.add(mach);
+        //agentParams.add(interfaceAddress);
+        //agentParams.add(masterAddress);
         agentParams.add(mach);
-        agentParams.add(interfaceAddress);
-        agentParams.add(masterAddress);
+        agentParams.add(masterAddress);        
+        agentParams.add(master);
+        
         agentParams.add(javaHome);
         agentParams.addAll(jvmOptions);
         agentParams.add("faban.benchmarkName=" + benchName);
@@ -683,9 +688,11 @@ final public class CmdService { 	// The final keyword prevents clones
                 // host name.
 
                 URL fabanURL = new URL(Config.FABAN_URL);
-                URL downloadURL = new URL(fabanURL.getProtocol(),
-                        interfaceAddress, fabanURL.getPort(),
-                        fabanURL.getFile());
+                //FIXME BUGFIX! 
+//                URL downloadURL = new URL(fabanURL.getProtocol(),
+//                        interfaceAddress, fabanURL.getPort(),
+//                        fabanURL.getFile());
+                URL downloadURL = fabanURL;
                 agentParams.add("faban.download=" + downloadURL.toString());
 
                 boolean agentStarted = false;
