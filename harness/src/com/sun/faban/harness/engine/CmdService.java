@@ -756,6 +756,9 @@ final public class CmdService { 	// The final keyword prevents clones
                     cmd.addAll(agent);
                     cmd.addAll(agentParams);
                     Command cmdAgent = new Command(cmd);
+                    
+                    logger.info("Executing: " + cmd + " As user: " + System.getProperty("user.name"));
+                    
                     cmdAgent.setSynchronous(false);
                     cmdAgent.setLogLevel(Command.STDOUT, Level.WARNING);
                     cmdAgent.execute();
