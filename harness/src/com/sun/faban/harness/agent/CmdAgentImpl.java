@@ -680,7 +680,7 @@ public class CmdAgentImpl extends UnicastRemoteObject
      * @throws IOException An I/O error occurred
      */
     public void setTime(String gmtTimeString) throws IOException {
-        Command c = new Command("date", "-u", gmtTimeString);
+        Command c = new Command("sudo", "date", "-u", gmtTimeString);
         c.setLogLevel(Command.STDOUT, Level.FINER);
         c.setLogLevel(Command.STDERR, Level.WARNING);
         try {
