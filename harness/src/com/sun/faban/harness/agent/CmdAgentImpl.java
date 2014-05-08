@@ -274,10 +274,12 @@ public class CmdAgentImpl extends UnicastRemoteObject
         try {
             return c.execute(this, extMap);
         } catch (IOException ex) {
-            logger.log(Level.WARNING, ex.getMessage(), ex);
+            logger.log(Level.WARNING, "Could not execute command:" + c.toString() + 
+        	    " Error:" + ex.getMessage(), ex);
             throw ex;
         } catch (InterruptedException ex) {
-            logger.log(Level.WARNING, ex.getMessage(), ex);
+            logger.log(Level.WARNING, "Could not execute command:" + c.toString() + 
+        	    " Error:" + ex.getMessage(), ex);
             throw ex;
         }
     }
