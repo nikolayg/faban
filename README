@@ -2,7 +2,11 @@ This fork of the FABAN project contains a number of workarounds
 allowing it work with the CloudStone workload. Changes are as few
 as possible.
 
-Below is the original README of the FABAN project.
+One examples of how this fork is used could be found here:
+http://nikolaygrozev.wordpress.com/2014/05/10/automated-cloudstone-setup-in-ubuntu-vms/ 
+
+
+Below is the original README of FABAN.
 
 == == == == == == == == == == == == 
 
